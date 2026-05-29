@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+
+# Claude Code 로컬 설정
+.claude/
+
+# 원본/내부 자료 (배포 사이트에는 불필요)
+01_copy.md
+02_GLONIX LOGO.png
+03_네이버 블로그.png
