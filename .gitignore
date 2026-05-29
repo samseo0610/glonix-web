@@ -8,3 +8,7 @@
 01_copy.md
 02_GLONIX LOGO.png
 03_네이버 블로그.png
+
+# 내부 운영 문서/스크립트 (공개 사이트에 노출 금지)
+DEPLOY.md
+publish.command
