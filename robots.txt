@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /privacy/
+
+Sitemap: https://www.glonix.co.kr/sitemap.xml

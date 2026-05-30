@@ -1,0 +1,17 @@
+# Netlify 배포 설정 — 빌드 없는 정적 사이트
+[build]
+  publish = "."
+  # 빌드 도구 없음(순수 HTML/CSS/JS)
+
+# 깔끔한 URL(/about/ → about/index.html)은 Netlify 기본 Pretty URLs로 동작.
+# 보안/캐시 헤더는 루트의 _headers 파일에서 관리됩니다.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
