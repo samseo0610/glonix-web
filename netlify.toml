@@ -6,12 +6,14 @@
 # 깔끔한 URL(/about/ → about/index.html)은 Netlify 기본 Pretty URLs로 동작.
 # 보안/캐시 헤더는 루트의 _headers 파일에서 관리됩니다.
 
+# CSS/JS/이미지는 파일명을 그대로 두고 직접 수정하므로, 항상 변경 여부를
+# 재검증(ETag)하도록 설정 → 수정 즉시 반영. 변경 없으면 304로 캐시 재사용.
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=0, must-revalidate"

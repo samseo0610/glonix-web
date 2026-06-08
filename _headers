@@ -1,12 +1,14 @@
-# Cloudflare Pages — 보안 및 캐시 헤더
+# Netlify — 보안 및 캐시 헤더
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
-# 정적 자산 장기 캐시
+# CSS/JS/이미지는 파일명을 그대로 두고 직접 수정하는 방식이라,
+# 항상 서버에 변경 여부를 확인(ETag 재검증)하도록 설정 — 수정 즉시 반영됨.
+# (재검증은 가벼워서 변경 없으면 304로 캐시 재사용)
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=0, must-revalidate
 /images/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=0, must-revalidate
