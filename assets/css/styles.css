@@ -482,7 +482,7 @@ table.data strong { color: var(--c-primary-dark); }
 .page-hero .lead { color: var(--c-text-on-dark-2); }
 
 /* 서비스 카테고리별 히어로 실사 — 카테고리마다 고유 이미지 (짙은 오버레이는 공통) */
-.page-hero--eb5    { background-image: var(--ph-ov), url("/images/svc-eb5.jpg"); }
+/* EB-5는 기존 interior-hero(NYC 스카이라인)를 그대로 사용 — 별도 모디파이어 없음 */
 .page-hero--niw    { background-image: var(--ph-ov), url("/images/svc-niw.jpg"); }
 .page-hero--eb3    { background-image: var(--ph-ov), url("/images/svc-eb3.jpg"); }
 .page-hero--nurse  { background-image: var(--ph-ov), url("/images/svc-nurse.jpg"); }
