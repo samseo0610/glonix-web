@@ -481,6 +481,14 @@ table.data strong { color: var(--c-primary-dark); }
 .page-hero h1 { color: #fff; max-width: 22ch; }
 .page-hero .lead { color: var(--c-text-on-dark-2); }
 
+/* 서비스 카테고리별 히어로 실사 — 카테고리마다 고유 이미지 (짙은 오버레이는 공통) */
+.page-hero--eb5    { background-image: var(--ph-ov), url("/images/svc-eb5.jpg"); }
+.page-hero--niw    { background-image: var(--ph-ov), url("/images/svc-niw.jpg"); }
+.page-hero--eb3    { background-image: var(--ph-ov), url("/images/svc-eb3.jpg"); }
+.page-hero--nurse  { background-image: var(--ph-ov), url("/images/svc-nurse.jpg"); }
+.page-hero--family { background-image: var(--ph-ov), url("/images/svc-family.jpg"); }
+.page-hero--niv    { background-image: var(--ph-ov), url("/images/svc-niv.jpg"); }
+
 /* content prose blocks */
 .prose { max-width: 760px; }
 .prose h2 { font-family: var(--ff-serif); font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin-top: 1.6em; }
