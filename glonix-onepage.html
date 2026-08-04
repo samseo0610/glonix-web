@@ -310,12 +310,14 @@ body.drawer-open { overflow: hidden; }
 /* member card */
 .member { text-align: center; }
 .member__photo {
-  /* 가짜 얼굴 생성 금지 — 중립 모노톤 실루엣 플레이스홀더. TODO: 실제 사진/약력 교체 */
   aspect-ratio: 4/5; border-radius: var(--radius-lg); margin-bottom: 18px;
   background: linear-gradient(160deg, #20303a, #0E1216); position: relative; overflow: hidden;
   display: grid; place-items: center; border: 1px solid var(--c-line-dark);
 }
 .member__photo svg { width: 58%; height: 58%; color: rgba(130,139,144,.45); }
+.member__photo picture { display: block; width: 100%; height: 100%; }
+.member__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.member .member__role-en { display: block; margin-top: 3px; color: var(--c-text-2); font-weight: 500; font-size: .8rem; letter-spacing: .01em; word-break: keep-all; }
 .member h3 { font-size: 1.16rem; margin-bottom: 2px; }
 .member .member__role { color: var(--c-primary); font-weight: 600; font-size: .92rem; letter-spacing: .04em; margin-bottom: 10px; }
 .member p { font-size: .94rem; color: var(--c-text-2); margin-bottom: 0; }
@@ -696,37 +698,151 @@ table.data strong { color: var(--c-primary-dark); }
     <div class="reveal center" style="max-width:720px;margin-inline:auto">
       <span class="eyebrow">구성원 소개</span>
       <h2 class="display">분야별 최고의 전문가가<br>당신의 성공을 설계합니다.</h2>
-      <p class="lead" style="margin-inline:auto">미국 이민법 전문 변호사, 공인회계사, 수속 전문가가 원팀으로 구성되어 케이스 진단부터 최종 승인까지 책임집니다.</p>
+      <p class="lead" style="margin-inline:auto">대표이사와 미국 변호사, 미국 현지 EB-5 부동산·투자 실사 전문가가 원팀으로 구성되어 케이스 진단부터 최종 승인까지 책임집니다.</p>
     </div>
 
     <div class="grid grid--4" style="margin-top:48px">
-      <!-- TODO: 실제 사진/약력 교체 — 가짜 인물 생성 금지, 중립 실루엣 플레이스홀더 -->
       <article class="member card reveal">
-        <div class="member__photo" role="img" aria-label="구성원 사진 준비 중"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-9 2-9 6v2h18v-2c0-4-5-6-9-6Z"/></svg></div>
-        <h3>[성명]</h3>
-        <p class="member__role">CEO · 대표이사</p>
-        <p>경력 <!-- 확인 필요: 실제 약력 --></p>
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/seo-hanul.webp">
+            <img src="/images/team/seo-hanul.jpg" alt="서한울 대표이사" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>서한울</h3>
+        <p class="member__role">대표이사 <span class="member__role-en">(CEO)</span></p>
       </article>
       <article class="member card reveal" data-delay="60">
-        <div class="member__photo" role="img" aria-label="구성원 사진 준비 중"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-9 2-9 6v2h18v-2c0-4-5-6-9-6Z"/></svg></div>
-        <h3>[성명] <span class="code-ref">Attorney at Law</span></h3>
-        <p class="member__role">미국 변호사</p>
-        <p>경력 <!-- 확인 필요: 실제 약력 --></p>
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/reza-sabaii.webp">
+            <img src="/images/team/reza-sabaii.jpg" alt="레자 사바이 미국 변호사" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>레자 사바이</h3>
+        <p class="member__role">미국 변호사 <span class="member__role-en">(Attorney at Law)</span></p>
       </article>
       <article class="member card reveal" data-delay="120">
-        <div class="member__photo" role="img" aria-label="구성원 사진 준비 중"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-9 2-9 6v2h18v-2c0-4-5-6-9-6Z"/></svg></div>
-        <h3>[성명] <span class="code-ref">CPA</span></h3>
-        <p class="member__role">공인회계사</p>
-        <p>EB-5·E-2 자금출처(SOF) 입증 및 재정 자료 작성 전담</p>
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/ali-tofigh.webp">
+            <img src="/images/team/ali-tofigh.jpg" alt="알리 토피그 미국 변호사" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>알리 토피그</h3>
+        <p class="member__role">미국 변호사 <span class="member__role-en">(Attorney at Law)</span></p>
       </article>
       <article class="member card reveal" data-delay="180">
-        <div class="member__photo" role="img" aria-label="구성원 사진 준비 중"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4 0-9 2-9 6v2h18v-2c0-4-5-6-9-6Z"/></svg></div>
-        <h3>[성명] 수속 전문가</h3>
-        <p class="member__role">Senior Case Manager</p>
-        <p>DS-160 / DS-260 / I-130 / I-485 서식 처리 전담. 한국 호적·가족관계증명서 영문 번역공증 실무</p>
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/boyd-lawrence.webp">
+            <img src="/images/team/boyd-lawrence.jpg" alt="보이드 로렌스 부동산 수석 자문위원" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>보이드 로렌스</h3>
+        <p class="member__role">부동산 수석 자문위원 <span class="member__role-en">(Chief Real Estate Advisor, EB-5 Division)</span></p>
+      </article>
+      <article class="member card reveal">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/steven-moskowitz.webp">
+            <img src="/images/team/steven-moskowitz.jpg" alt="스티븐 P. 모스코위츠 투자실사 이사" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>스티븐 P. 모스코위츠</h3>
+        <p class="member__role">투자실사 이사 <span class="member__role-en">(Director, Investment Due Diligence)</span></p>
+      </article>
+      <article class="member card reveal" data-delay="60">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/mani-milan.webp">
+            <img src="/images/team/mani-milan.jpg" alt="마니 밀란 이민 컴플라이언스 이사" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>마니 밀란</h3>
+        <p class="member__role">이민 컴플라이언스 이사 <span class="member__role-en">(Director of EB-5 Compliance)</span></p>
+      </article>
+      <article class="member card reveal" data-delay="120">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/steve-seo.webp">
+            <img src="/images/team/steve-seo.jpg" alt="스티브 서 미국 현지 사업협력 이사" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>스티브 서</h3>
+        <p class="member__role">미국 현지 사업협력 이사 <span class="member__role-en">(Director of US Operations &amp; Partnerships)</span></p>
+      </article>
+      <article class="member card reveal" data-delay="180">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/john-daly.webp">
+            <img src="/images/team/john-daly.jpg" alt="존 데일리 부동산금융 심사팀장" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>존 데일리</h3>
+        <p class="member__role">부동산금융 심사팀장 <span class="member__role-en">(Head of Real Estate Finance Underwriting)</span></p>
+      </article>
+      <article class="member card reveal">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/sarah-lescallett.webp">
+            <img src="/images/team/sarah-lescallett.jpg" alt="사라 레스칼렛 부동산실사 팀장" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>사라 레스칼렛</h3>
+        <p class="member__role">부동산실사 팀장 <span class="member__role-en">(Head of Real Estate Due Diligence)</span></p>
+      </article>
+      <article class="member card reveal" data-delay="60">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/nitika-dumera.webp">
+            <img src="/images/team/nitika-dumera.jpg" alt="니티카 두메라 투자분석 팀장" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>니티카 두메라</h3>
+        <p class="member__role">투자분석 팀장 <span class="member__role-en">(Head of Investment Analysis)</span></p>
+      </article>
+      <article class="member card reveal" data-delay="120">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/adam-benaim.webp">
+            <img src="/images/team/adam-benaim.jpg" alt="애덤 베나임 리스크관리 팀장" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>애덤 베나임</h3>
+        <p class="member__role">리스크관리 팀장 <span class="member__role-en">(Head of Risk Management)</span></p>
+      </article>
+      <article class="member card reveal" data-delay="180">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/justin-katz.webp">
+            <img src="/images/team/justin-katz.jpg" alt="저스틴 카츠 자산관리 팀장" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>저스틴 카츠</h3>
+        <p class="member__role">자산관리 팀장 <span class="member__role-en">(Head of Asset Management)</span></p>
+      </article>
+      <article class="member card reveal">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/brooke-fontan.webp">
+            <img src="/images/team/brooke-fontan.jpg" alt="브룩 폰탄 자산관리 팀장" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>브룩 폰탄</h3>
+        <p class="member__role">자산관리 팀장 <span class="member__role-en">(Head of Asset Management)</span></p>
+      </article>
+      <article class="member card reveal" data-delay="60">
+        <div class="member__photo">
+          <picture>
+            <source type="image/webp" srcset="/images/team/david-krucoff.webp">
+            <img src="/images/team/david-krucoff.jpg" alt="데이비드 크루코프 부동산 수석 분석가" loading="lazy" decoding="async" width="640" height="800">
+          </picture>
+        </div>
+        <h3>데이비드 크루코프</h3>
+        <p class="member__role">부동산 수석 분석가 <span class="member__role-en">(Senior Real Estate Analyst)</span></p>
       </article>
     </div>
-    <p class="note reveal" style="margin-top:28px">각 전문가의 정식 사진과 약력은 페이지 제작 단계에서 추가 게재 예정입니다.</p>
   </div>
 </section>
 
