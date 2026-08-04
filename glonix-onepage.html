@@ -314,6 +314,15 @@ body.drawer-open { overflow: hidden; }
   background: linear-gradient(160deg, #20303a, #0E1216); position: relative; overflow: hidden;
   display: grid; place-items: center; border: 1px solid var(--c-line-dark);
 }
+.team-group { display: flex; align-items: baseline; gap: 16px; margin: 52px 0 22px; }
+.team-group:first-of-type { margin-top: 44px; }
+.team-group::after { content: ""; flex: 1 1 auto; height: 1px; background: var(--c-line); }
+.team-group__ko { font-family: var(--ff-display); font-size: 1.16rem; color: var(--c-ink); white-space: nowrap; }
+.team-group__en { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c-primary); white-space: nowrap; }
+@media (max-width: 600px) {
+  .team-group { flex-wrap: wrap; gap: 6px 12px; margin: 40px 0 18px; }
+  .team-group::after { flex-basis: 100%; }
+}
 .member__photo svg { width: 58%; height: 58%; color: rgba(130,139,144,.45); }
 .member__photo picture { display: block; width: 100%; height: 100%; }
 .member__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
@@ -701,7 +710,11 @@ table.data strong { color: var(--c-primary-dark); }
       <p class="lead" style="margin-inline:auto">대표이사와 미국 변호사, 미국 현지 EB-5 부동산·투자 실사 전문가가 원팀으로 구성되어 케이스 진단부터 최종 승인까지 책임집니다.</p>
     </div>
 
-    <div class="grid grid--4" style="margin-top:48px">
+    <div class="team-group reveal">
+      <span class="team-group__ko">대표</span>
+      <span class="team-group__en">Executive</span>
+    </div>
+    <div class="grid grid--4">
       <article class="member card reveal">
         <div class="member__photo">
           <picture>
@@ -712,7 +725,13 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>서한울</h3>
         <p class="member__role">대표이사 <span class="member__role-en">(CEO)</span></p>
       </article>
-      <article class="member card reveal" data-delay="60">
+    </div>
+    <div class="team-group reveal">
+      <span class="team-group__ko">법률 자문</span>
+      <span class="team-group__en">Attorneys at Law</span>
+    </div>
+    <div class="grid grid--4">
+      <article class="member card reveal">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/reza-sabaii.webp">
@@ -722,7 +741,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>레자 사바이</h3>
         <p class="member__role">미국 변호사 <span class="member__role-en">(Attorney at Law)</span></p>
       </article>
-      <article class="member card reveal" data-delay="120">
+      <article class="member card reveal" data-delay="60">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/ali-tofigh.webp">
@@ -732,7 +751,13 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>알리 토피그</h3>
         <p class="member__role">미국 변호사 <span class="member__role-en">(Attorney at Law)</span></p>
       </article>
-      <article class="member card reveal" data-delay="180">
+    </div>
+    <div class="team-group reveal">
+      <span class="team-group__ko">자문·임원</span>
+      <span class="team-group__en">Advisory &amp; Executive</span>
+    </div>
+    <div class="grid grid--4">
+      <article class="member card reveal">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/boyd-lawrence.webp">
@@ -742,7 +767,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>보이드 로렌스</h3>
         <p class="member__role">부동산 수석 자문위원 <span class="member__role-en">(Chief Real Estate Advisor, EB-5 Division)</span></p>
       </article>
-      <article class="member card reveal">
+      <article class="member card reveal" data-delay="60">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/steven-moskowitz.webp">
@@ -752,7 +777,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>스티븐 P. 모스코위츠</h3>
         <p class="member__role">투자실사 이사 <span class="member__role-en">(Director, Investment Due Diligence)</span></p>
       </article>
-      <article class="member card reveal" data-delay="60">
+      <article class="member card reveal" data-delay="120">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/mani-milan.webp">
@@ -762,7 +787,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>마니 밀란</h3>
         <p class="member__role">이민 컴플라이언스 이사 <span class="member__role-en">(Director of EB-5 Compliance)</span></p>
       </article>
-      <article class="member card reveal" data-delay="120">
+      <article class="member card reveal" data-delay="180">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/steve-seo.webp">
@@ -772,7 +797,13 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>스티브 서</h3>
         <p class="member__role">미국 현지 사업협력 이사 <span class="member__role-en">(Director of US Operations &amp; Partnerships)</span></p>
       </article>
-      <article class="member card reveal" data-delay="180">
+    </div>
+    <div class="team-group reveal">
+      <span class="team-group__ko">실무 팀장</span>
+      <span class="team-group__en">Team Leads &amp; Heads</span>
+    </div>
+    <div class="grid grid--4">
+      <article class="member card reveal">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/john-daly.webp">
@@ -782,7 +813,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>존 데일리</h3>
         <p class="member__role">부동산금융 심사팀장 <span class="member__role-en">(Head of Real Estate Finance Underwriting)</span></p>
       </article>
-      <article class="member card reveal">
+      <article class="member card reveal" data-delay="60">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/sarah-lescallett.webp">
@@ -792,7 +823,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>사라 레스칼렛</h3>
         <p class="member__role">부동산실사 팀장 <span class="member__role-en">(Head of Real Estate Due Diligence)</span></p>
       </article>
-      <article class="member card reveal" data-delay="60">
+      <article class="member card reveal" data-delay="120">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/nitika-dumera.webp">
@@ -802,7 +833,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>니티카 두메라</h3>
         <p class="member__role">투자분석 팀장 <span class="member__role-en">(Head of Investment Analysis)</span></p>
       </article>
-      <article class="member card reveal" data-delay="120">
+      <article class="member card reveal" data-delay="180">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/adam-benaim.webp">
@@ -812,7 +843,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>애덤 베나임</h3>
         <p class="member__role">리스크관리 팀장 <span class="member__role-en">(Head of Risk Management)</span></p>
       </article>
-      <article class="member card reveal" data-delay="180">
+      <article class="member card reveal">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/justin-katz.webp">
@@ -822,7 +853,7 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>저스틴 카츠</h3>
         <p class="member__role">자산관리 팀장 <span class="member__role-en">(Head of Asset Management)</span></p>
       </article>
-      <article class="member card reveal">
+      <article class="member card reveal" data-delay="60">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/brooke-fontan.webp">
@@ -832,7 +863,13 @@ table.data strong { color: var(--c-primary-dark); }
         <h3>브룩 폰탄</h3>
         <p class="member__role">자산관리 팀장 <span class="member__role-en">(Head of Asset Management)</span></p>
       </article>
-      <article class="member card reveal" data-delay="60">
+    </div>
+    <div class="team-group reveal">
+      <span class="team-group__ko">수석 전문가</span>
+      <span class="team-group__en">Senior Specialist</span>
+    </div>
+    <div class="grid grid--4">
+      <article class="member card reveal">
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/david-krucoff.webp">

@@ -275,6 +275,15 @@ body.drawer-open { overflow: hidden; }
 .svc-card .link-arrow { margin-top: auto; color: var(--c-primary); }
 
 /* member card */
+.team-group { display: flex; align-items: baseline; gap: 16px; margin: 52px 0 22px; }
+.team-group:first-of-type { margin-top: 44px; }
+.team-group::after { content: ""; flex: 1 1 auto; height: 1px; background: var(--c-line); }
+.team-group__ko { font-family: var(--ff-display); font-size: 1.16rem; color: var(--c-ink); white-space: nowrap; }
+.team-group__en { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c-primary); white-space: nowrap; }
+@media (max-width: 600px) {
+  .team-group { flex-wrap: wrap; gap: 6px 12px; margin: 40px 0 18px; }
+  .team-group::after { flex-basis: 100%; }
+}
 .member { text-align: center; }
 .member__photo {
   aspect-ratio: 4/5; border-radius: var(--radius-lg); margin-bottom: 18px;
