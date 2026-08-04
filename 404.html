@@ -7,25 +7,36 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;600;700&display=swap">
 <style>
-  :root { --c:#43809E; --ink:#0E0F11; }
+  :root { --c:#43809E; --seal:#C6A968; --ink:#12171A; }
   * { box-sizing:border-box; }
-  body { margin:0; min-height:100vh; display:grid; place-items:center; text-align:center;
+  body { margin:0; min-height:100vh; display:grid; place-items:center;
     font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-    background:linear-gradient(160deg,#0E0F11,#18191C 60%,#24272B); color:#EEF1F3; padding:24px; }
-  .code { font-size:clamp(64px,16vw,140px); font-weight:800; color:var(--c); line-height:1; letter-spacing:-.02em; }
-  h1 { font-size:clamp(1.2rem,3vw,1.6rem); margin:8px 0 12px; }
-  p { color:#9BA6AD; max-width:40ch; margin:0 auto 28px; }
-  a.btn { display:inline-block; background:var(--c); color:#fff; text-decoration:none; font-weight:600;
-    padding:14px 28px; border-radius:6px; transition:transform .18s, background .2s; }
-  a.btn:hover { background:#2F6580; transform:translateY(-2px); }
+    background:linear-gradient(162deg,#0E1215,#171D21 60%,#212930); color:#EDF0F1; padding:24px;
+    word-break:keep-all; line-height:1.72; }
+  main { max-width:520px; }
+  .code { display:flex; align-items:center; gap:14px; font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.75rem; font-weight:500; letter-spacing:.11em; color:var(--seal); margin-bottom:20px; }
+  .code::before { content:""; width:24px; height:1px; background:currentColor; }
+  h1 { font-family:"Noto Serif KR",serif; font-weight:600; letter-spacing:-.018em;
+    font-size:clamp(1.6rem,4vw,2.4rem); line-height:1.28; margin:0 0 14px; }
+  p { color:#99A4A9; margin:0 0 30px; }
+  a.btn { display:inline-block; background:var(--c); border:1px solid var(--c); color:#fff; text-decoration:none;
+    font-weight:600; padding:15px 28px; border-radius:3px; transition:background .2s, border-color .2s; }
+  a.btn:hover { background:#2F6580; border-color:#2F6580; }
+  a.btn:focus-visible { outline:2px solid #7FB2CC; outline-offset:3px; }
 </style>
 </head>
 <body>
   <main>
-    <div class="code">404</div>
-    <h1>페이지를 찾을 수 없습니다</h1>
-    <p>요청하신 페이지가 이동되었거나 존재하지 않습니다. 홈으로 돌아가 다시 찾아 주세요.</p>
+    <p class="code">HTTP 404 — NOT FOUND</p>
+    <h1>요청하신 페이지가 없습니다</h1>
+    <p>주소가 바뀌었거나 삭제된 페이지입니다. 홈에서 서비스와 상담 신청을 다시 찾아보세요.</p>
     <a class="btn" href="/">홈으로 돌아가기</a>
   </main>
 </body>
