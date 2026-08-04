@@ -195,6 +195,15 @@ em, i { font-style: italic; }
 .btn--lg { padding: 17px 34px; font-size: 1.05rem; }
 .btn--block { width: 100%; }
 
+/* 버튼 안 아이콘 — 세 연락 수단을 같은 획 굵기·같은 크기로 묶는다 */
+.btn > svg { width: 1.15em; height: 1.15em; flex: 0 0 auto; }
+.btn--kakao { background: #FAE100; border-color: #FAE100; color: #191600; }
+.btn--kakao:hover { background: #EFD600; border-color: #EFD600; color: #191600; }
+
+/* 상담 페이지 사이드 — 전화 / 이메일 / 카카오 */
+.contact-actions { display: grid; gap: 10px; margin-bottom: 22px; }
+.contact-actions .btn { justify-content: flex-start; padding-inline: 20px; font-size: .98rem; }
+
 /* underline micro-interaction */
 .link-arrow { display: inline-flex; align-items: center; gap: .45em; font-weight: 600; font-size: .94rem; }
 .link-arrow::after { content: "→"; transition: transform .2s var(--ease); }
@@ -858,11 +867,11 @@ table.data strong { color: var(--c-primary-dark); }
         <div class="member__photo">
           <picture>
             <source type="image/webp" srcset="/images/team/steve-seo.webp">
-            <img src="/images/team/steve-seo.jpg" alt="스티브 서 미국 현지 사업협력 이사" loading="lazy" decoding="async" width="640" height="800">
+            <img src="/images/team/steve-seo.jpg" alt="스티브 서 미국 사업협력 이사" loading="lazy" decoding="async" width="640" height="800">
           </picture>
         </div>
         <h3>스티브 서</h3>
-        <p class="member__role">미국 현지 사업협력 이사 <span class="member__role-en">(Director of US Operations &amp; Partnerships)</span></p>
+        <p class="member__role">미국 사업협력 이사 <span class="member__role-en">(Director of US Operations &amp; Partnerships)</span></p>
       </article>
       <article class="member card reveal" data-delay="60">
         <div class="member__photo">
@@ -1227,8 +1236,7 @@ table.data strong { color: var(--c-primary-dark); }
 
 <!-- ============ FLOATING CTA ============ -->
 <div class="floating-cta">
-  <!-- TODO: 실제 카카오톡 채널 URL로 교체 -->
-  <a class="fab fab--kakao" href="https://pf.kakao.com/" target="_blank" rel="noopener" aria-label="카카오톡 1:1 상담">
+  <a class="fab fab--kakao" href="https://pf.kakao.com/_xeGxlqX" target="_blank" rel="noopener" aria-label="카카오톡 1:1 상담">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.7-.8 2.6-.9 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.7.1 1.4.2 2.1.2 5.5 0 10-3.6 10-8s-4.5-8-10-8Z"/></svg>
     <span class="fab__label">카카오톡 상담</span>
   </a>

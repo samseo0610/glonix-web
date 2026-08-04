@@ -1,6 +1,7 @@
 /* =================================================================
    GLONIX — 1:1 상담 신청 폼 (조건부 표시 + 클라이언트 검증 + 제출)
-   TODO: 실제 메일/CRM 연동 (서버 측 검증 포함). 현재는 콘솔/토스트 스텁.
+   제출 경로: Netlify Forms (폼 name="consult"). 수신 메일 주소는 Netlify
+   대시보드 Forms → 알림 설정에서 관리한다(코드에 하드코딩하지 않음).
    ================================================================= */
 (function () {
   "use strict";
@@ -126,21 +127,27 @@
       return;
     }
 
-    // ----- 제출 스텁 -----
-    var data = Object.fromEntries(new FormData(form).entries());
-    // 복수 선택 항목 수집
-    data.visa_categories = Array.prototype.map.call(form.querySelectorAll('[name="visa-cat"]:checked,[name="visa-cat-noniv"]:checked'), function (c) { return c.value; });
-    data.interests = Array.prototype.map.call(form.querySelectorAll('[name="interest"]:checked'), function (c) { return c.value; });
-    // TODO: 실제 메일(admin@glonix.co.kr) / CRM 연동 — 예: fetch('/api/consult', {method:'POST', body: JSON.stringify(data)})
-    console.log("[GLONIX] 상담 신청 데이터 (제출 스텁):", data);
-
+    // ----- 제출: Netlify Forms 로 POST -----
+    // 페이지 이동 없이 보내고 토스트로 결과를 알린다. 체크박스 복수 선택은
+    // 같은 name 이 여러 번 실려 Netlify 쪽에 그대로 누적된다.
     var btn = form.querySelector('button[type="submit"]');
+    var btnLabel = btn.textContent;
     btn.disabled = true; btn.textContent = "접수 처리 중…";
-    setTimeout(function () {
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
       showToast("상담 신청이 접수되었습니다. 영업일 기준 24시간 이내에 회신드립니다.");
       form.reset();
       form.querySelectorAll(".conditional").forEach(function (c) { c.hidden = true; });
-      btn.disabled = false; btn.textContent = "상담 신청 제출하기 →";
-    }, 700);
+    }).catch(function (err) {
+      console.error("[GLONIX] 상담 신청 전송 실패:", err);
+      showToast("전송에 실패했습니다. 070-7709-1313 또는 admin@glonix.co.kr 로 연락해 주세요.", true);
+    }).then(function () {
+      btn.disabled = false; btn.textContent = btnLabel;
+    });
   });
 })();
