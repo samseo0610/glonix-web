@@ -390,6 +390,16 @@ body.drawer-open { overflow: hidden; }
   font-weight: 400; font-size: .72rem; letter-spacing: .01em; line-height: 1.5; word-break: keep-all;
 }
 .member p { font-size: .94rem; color: var(--c-text-2); margin-bottom: 0; }
+/* 모바일 — 구성원 카드는 1열로 떨어뜨리지 않고 2열 유지.
+   1열이면 사진이 화면폭 전체로 커져 얼굴만 확대돼 보인다. */
+@media (max-width: 600px) {
+  .grid--members { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+  .grid--members .member { min-width: 0; }
+  .grid--members .member__role-en { overflow-wrap: anywhere; }
+  .grid--members .member h3 { font-size: 1rem; }
+  .grid--members .member .member__role { font-size: .84rem; }
+  .grid--members .member .member__role-en { font-size: .66rem; letter-spacing: 0; }
+}
 
 /* ---------- Tables ---------- */
 .table-wrap { overflow-x: auto; margin: 0 0 1.5em; -webkit-overflow-scrolling: touch; }
