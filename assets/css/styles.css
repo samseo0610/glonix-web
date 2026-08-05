@@ -331,22 +331,13 @@ body.drawer-open { overflow: hidden; }
   color: var(--c-text-2); line-height: 1; display: block; margin-bottom: 16px;
 }
 
-/* ── 반박쌍: 통상 관행 / 글로닉스. 숫자 대신 정보를 싣는 구조 ── */
+/* ── 차별점 카드: 숫자 대신 정보를 싣는 구조 ── */
 .claim {
   background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-lg);
   padding: clamp(24px, 3vw, 34px); transition: border-color .25s;
   display: flex; flex-direction: column;
 }
 .claim:hover { border-color: var(--c-line-strong); }
-.claim__foil {
-  display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 12px;
-  margin: 0 0 18px; padding-bottom: 18px; border-bottom: 1px solid var(--c-line);
-  font-size: .92rem; color: var(--c-text-2);
-}
-.claim__foil b {
-  font-family: var(--ff-mono); font-size: .68rem; font-weight: 500; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--c-silver); white-space: nowrap;
-}
 .claim h3 { font-size: 1.16rem; margin: 0 0 .55em; letter-spacing: -.015em; }
 .claim > p:last-child { margin-bottom: 0; color: var(--c-text-2); font-size: .97rem; }
 
